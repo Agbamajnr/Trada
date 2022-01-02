@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { ref } from 'vue';
 
-const url = 'http://localhost:3030/api/waiting';
+const url = 'https://trada-market.herokuapp.com/api/waiting';
 
   const addEmail = (email) => {
     const data = ref('')
