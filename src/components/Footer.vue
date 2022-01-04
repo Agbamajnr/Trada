@@ -173,12 +173,20 @@
     }
 
     @media screen and (max-width: 640px) {
+        footer div {
+            width: 100%;
+        }
         .footer-info {
             width: 100%;
             height: 120%;
         }
         .footer-info p {
             width: 100%;
+        }
+    }
+    @media screen and (max-width: 320px) {
+        footer {
+            padding: 20px !important;
         }
     }
 </style>

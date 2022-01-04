@@ -1,8 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import Home from '../views/Home.vue'
 import Waiting from '../views/Waiting.vue'
 import ComingSoon from '../views/Comingsoon.vue'
 
 const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  },
   {
     path: '/waiting',
     name: 'Waiting',
@@ -13,10 +19,6 @@ const routes = [
     name: 'ComingSoon',
     component: ComingSoon
   },
-  {
-    path: '/',
-    redirect: '/waiting',
-  }
 ]
 
 const router = createRouter({
