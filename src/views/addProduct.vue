@@ -57,7 +57,7 @@ export default {
         const route = useRoute();
         const store = useStore();
         const logo = ref(null);
-        const url = 'http://localhost:8080/';
+        const url = 'https://trada.vercel.app/';
 
         const submitBtn = ref()
         const processProduct = ref(false)

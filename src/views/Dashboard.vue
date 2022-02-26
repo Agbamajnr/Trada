@@ -88,10 +88,10 @@ export default {
         const loading = ref(false);
 
         const getUser = async () => {
-          const cookies = await axios.get('http://localhost:8080/api/auth/checkCookies', { withCredentials: true });
+          const cookies = await axios.get('https://trada.vercel.app/api/auth/checkCookies', { withCredentials: true });
           console.log(cookies.data);
           if(cookies.data === true) {
-            const res = await axios.get('http://localhost:8080/api/auth/user', { withCredentials: true })
+            const res = await axios.get('https://trada.vercel.app/api/auth/user', { withCredentials: true })
             user.value = res.data;
             console.log(user);
           } else {
@@ -107,7 +107,7 @@ export default {
 
         
 
-        const url = 'http://localhost:8080/api/store';
+        const url = 'https://trada.vercel.app/api/store';
         const getAllStores = async () => {
             loading.value = true;
             const response = await axios.get(url);

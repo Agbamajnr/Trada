@@ -82,7 +82,7 @@ export default {
         message.value = '';
         processing.value = true;
         submitBtn.value.style.animationDuration = '10s';
-        const response = await axios.post('http://localhost:8080/api/auth/login', data, {withCredentials: true})
+        const response = await axios.post('https://trada.vercel.app/api/auth/login', data, {withCredentials: true})
         console.log(response.data);
         if (response.data.message == 'success') {
             setTimeout(() => {      

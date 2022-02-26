@@ -109,7 +109,7 @@
     setup() {
       const router = useRouter();
       const logoutUser  = async () => {
-        const result = await axios.post('http://localhost:8080/api/auth/logout', {withCredentials: true});
+        const result = await axios.post('https://trada.vercel.app/api/auth/logout', {withCredentials: true});
 
         console.log(result.data);
 

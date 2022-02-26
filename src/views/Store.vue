@@ -130,18 +130,15 @@ export default {
         const processing = ref(false)
 
         const storePic = ref();
-        console.log(storePic);
 
         const router = useRouter();
         const route = useRoute();
-        console.log(route.params.id);
-        const url = 'http://localhost:8080/api/store/' + route.params.id;
-        console.log(url);
+        const url = 'https://trada.vercel.app/api/store/' + route.params.id;
 
         const getStoreDetails = async () => {
             loading.value = true;
             const response = await axios.get(url);
-            console.log(response);
+
 
             storeDetails.name = response.data.storeName;
             storeDetails.quote = response.data.storeQuote;
@@ -161,29 +158,23 @@ export default {
             storePic.value = img;
             
 
-            
-            console.log(storeDetails);
-            
             getProducts();
             loading.value = false;
         }
 
         async function getProducts() {
             storeDetails.products.forEach(async (product) => {
-                console.log(product);
-                const response = await axios.get('http://localhost:8080/api/product/' + product);
+                const response = await axios.get('https://trada.vercel.app/api/product/' + product);
 
                 products.value.push({product: response.data})
                 
-
-                console.log(products);
                 
             })
         }
 
         const startChat = async () => {
             processing.value = true;
-            const data = await axios.post('http://localhost:8080/api/chatting/room', {
+            const data = await axios.post('https://trada.vercel.app/api/chatting/room', {
                 "sellerId": storeDetails.id,
                 "buyerId": store.state.user[0]._id,
             })

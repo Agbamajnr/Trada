@@ -86,7 +86,7 @@ export default {
         
       const router = useRouter();
 
-      const url = 'http://localhost:8080/';
+      const url = 'https://trada.vercel.app/';
 
       const submit = async () => {
             submitBtn.value.style.animationDuration = '10s';

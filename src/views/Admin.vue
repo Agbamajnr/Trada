@@ -126,7 +126,7 @@ export default {
 
         const router = useRouter();
         const route = useRoute();
-        const url = 'http://localhost:8080/api/store/' + route.params.id;
+        const url = 'https://trada.vercel.app/api/store/' + route.params.id;
 
         const getStoreDetails = async () => {
             loading.value = true;
@@ -158,7 +158,7 @@ export default {
         async function getProducts() {
             loading.value = false;
             storeDetails.products.forEach(async (product) => {
-                const response = await axios.get('http://localhost:8080/api/product/' + product);
+                const response = await axios.get('https://trada.vercel.app/api/product/' + product);
 
                 products.value.push({product: response.data})
                 
