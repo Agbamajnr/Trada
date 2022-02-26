@@ -3,13 +3,7 @@
         <footer class="mt-20 p-16 flex flex-row justify-between items-center " style="color: #fff;">
             <!--footer first container(left) -->
             <div class="footer-info h-full  flex flex-col items-start w-1/3">
-                    <div class="w-3/5 flex flex-row items-center">
-                        <div class="logo-box flex flex-row items-center justify-center">
-                            <img src="../assets/img/logo.svg" class="w-5 h-5">
-                            <img src="../assets/img/logo3.svg" class="w-2 h-2">
-                        </div>
-                        <img class="ml-4" src="../assets/img/logo2.svg" alt="">
-                </div>
+                <Logo />
                 <p style="font-family: 'Rubik'; font-size: 16px; font-weight: 400;">
                     Trada offers a simple interfaces where anyone can buy and sell goods and services for free 
                 </p>
@@ -103,20 +97,18 @@
     <!-- footer section ends -->
 </template>
 
+<script>
+import Logo from "./Logo.vue";
+export default {
+    name: 'Footer',
+    components : { Logo },
+}
+</script>
+
 
 <style scoped>
-    .gradient-btn {
-        background: linear-gradient(183.54deg, #F8C616 -31.44%, #880492 16.39%, #FF4510 107.97%);
-        font-family: "Rubik";
-        font-size: 16px;
-        font-weight: 500;
-    }
-    .logo-box {
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(173.36deg, #F8C616 1.92%, #880492 1.93%, #FF4510 109.19%);
-        border-radius: 15px;
-    }
+    
+    
     .footer-socials a {
         margin: 7px;
     }

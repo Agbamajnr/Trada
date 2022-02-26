@@ -3,24 +3,19 @@
       <div class="nav flex flex-col relative" style=" color: #fff;">
           <div class="normal-nav flex flex-row justify-between">
               <div class="left flex flex-row justify-between items-center p-4 " style="width: 50%;">
-                <div class="logo w-36 flex flex-row justify-between items-center ">
-                    <div class="logo-box flex flex-row items-center justify-center">
-                        <img src="../assets/img/logo.svg" class="w-5 h-5">
-                        <img src="../assets/img/logo3.svg" class="w-2 h-2">
-                    </div>
-                    <img src="../assets/img/logo2.svg" alt="">
-                </div>
-                <div class="links w-1/2 flex justify-between items-center pt-1"  style="font-family: Montserrat;">
-                    <a href="/comingsoon">Products</a>
-                    <a href="/comingsoon" style="color: #F8C616;">Our Token</a>
-                    <a href="/comingsoon">Support</a>
+                <Logo />
+                <div ref="nav_links" class="links w-1/2 flex justify-between items-center pt-1"  style="font-family: Montserrat;">
+                    <a @click="activeLink" href="/comingsoon">Products</a>
+                    <a @click="activeLink" href="/tdttoken">Our Token</a>
+                    <a @click="activeLink" href="/comingsoon">Support</a>
                 </div>
             </div>
             <div class="right w-44 flex flex-row justify-between items-center pt-2 bg-cyan">
-                <div class="flex flex-row justify-between items-center w-full">
-                    <a href="/comingsoon">Signup</a>
-                    <a href="/comingsoon" class="login-btn w-24 h-9 rounded flex justify-center items-center">Login</a>
+                <div class="flex flex-row justify-between items-center w-full" v-if="$store.state.authenticated !== true">
+                    <a href="/register">Signup</a>
+                    <a href="/login" class="login-btn w-24 h-9 rounded flex justify-center items-center">Login</a>
                 </div>
+                <div class="flex  flex-row w-full" v-if="$store.state.authenticated === true"><p class="text-lg"><a href="/dashboard" class="no-underline ">Hi  {{$store.state.user[0].fname}}</a></p></div>
                 <svg @click="showNav" ref="nav_btn" class="nav-btn hidden w-6 h-6 lg:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 <svg @click="hideNav" ref="close_nav" class="cl0se-nav w-6 h-6 hidden lg:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
@@ -29,11 +24,11 @@
           <div ref="mobile_nav" class="mobile-nav flex flex-col justify-center items-center ">
               <div class="links w-1/2 flex flex-col items-center justify-between pt-1 h-2/4"  style="font-family: Montserrat;">
                     <a href="/comingsoon">Products</a>
-                    <a href="/comingsoon" style="color: #F8C616;">Our Token</a>
+                    <a href="/tdttoken">Our Token</a>
                     <a href="/comingsoon">Support</a>
-                    <div class="flex flex-row  items-center justify-between w-44">
-                    <a href="/comingsoon">Signup</a>
-                    <a href="/comingsoon" class="login-btn w-24 h-9 rounded flex justify-center items-center">Login</a>
+                <div class="flex flex-row  items-center justify-between w-44" v-if="$store.state.authenticated !== true">
+                    <a href="/register">Signup</a>
+                    <a href="/login" class="login-btn w-24 h-9 rounded flex justify-center items-center">Login</a>
                 </div>
                 </div>
           </div>
@@ -43,17 +38,32 @@
 
 <script>
     import { ref } from "vue";
+    import {useStore} from "vuex";
+    import Logo from "./Logo.vue";
+    import {onBeforeMount} from 'vue';
     
     export default {
+        name: 'Navbar',
+        components : { Logo },
         setup() {
             
+
             const nav_btn = ref(null);
             const mobile_nav = ref(null);
             const close_nav = ref(null);
 
+            function activeLink(e) {
+                console.log(e, e.target._value);
+                e.target.outerHTML.classList.add('active');
+                alert(e.target.outerHTML)
+            }
+
+
+
             const showNav = () => {
                 nav_btn.value.classList.add('hidden');
                 nav_btn.value.style.color = '#000';
+                nav_btn.value.style.display = 'none';
                 mobile_nav.value.style.left = "0px";
                 close_nav.value.classList.remove('hidden');
             }
@@ -63,37 +73,28 @@
                 nav_btn.value.classList.remove('hidden');
                 mobile_nav.value.style.left = "-120%";
                 nav_btn.value.style.color = '#fff';
+                nav_btn.value.style.display = 'initial';
                 close_nav.value.classList.add('hidden');
 
             }
 
 
-
-
-            return {mobile_nav, showNav, nav_btn, close_nav, hideNav}
+            return {mobile_nav, showNav, nav_btn, close_nav, hideNav,activeLink,}
         }
     }
 </script>
 
 <style scoped>
     /* utilities */
-    .gradient-btn {
-        background: linear-gradient(183.54deg, #F8C616 -31.44%, #880492 16.39%, #FF4510 107.97%);
-        font-family: "Rubik";
-        font-size: 16px;
-        font-weight: 500;
-    }
+
     .login-btn {
         background: 
         linear-gradient(black, black) padding-box,
         linear-gradient(to right, #F8C616, #880492, #FF460C) border-box;
         border: 1px solid transparent;
     }
-    .logo-box {
-        width: 40px;
-        height: 40px;
-        background: linear-gradient(173.36deg, #F8C616 1.92%, #880492 1.93%, #FF4510 109.19%);
-        border-radius: 15px;
+    .active {
+        color: #F8C616;
     }
 
 

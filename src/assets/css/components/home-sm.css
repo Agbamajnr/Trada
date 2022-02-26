@@ -1,0 +1,146 @@
+@media screen and (max-width: 640px) {
+    .main div {
+      margin-top: 30px;
+    }
+
+    .intro-text .text-6xl {
+      font-size: 30px !important;
+      font-weight: 800;
+      margin-top: 0 !important;
+      line-height: 42px !important;
+      text-align: center !important;
+    }
+    .intro-text .text-xl {
+      font-size: 14px !important;
+      color: #C4C4C4 !important;
+      text-align: center !important;
+      line-height: 16.59px !important
+    }
+    .intro-text button {
+      margin-top: 13px !important;
+    }
+
+
+    .intro-img .container {
+      display: none !important;
+    }
+    .intro-img img {
+      display: block !important;
+    }
+
+    .buyers-tab {
+      text-align: center !important;
+      flex-direction: column !important;
+    }
+    .buyers-tab div {
+      width: 100% !important;
+    }
+    .buyers-tab .details {
+      align-items: center !important;
+      width: 90% !important;
+    }
+    .buyers-tab .details .text-5xl {
+      font-size: 27px !important;
+      line-height: 30.82px !important;
+    }
+    .buyers-tab .details .font-normal {
+      font-size: 14px !important
+    }
+    .buyers-tab .container {
+      width: 90% !important;
+      height: 319px !important;
+    }
+
+
+    .vendors-tab {
+      text-align: center !important;
+      flex-direction: column !important;
+    }
+    .vendors-tab div {
+      width: 100% !important;
+    }
+    .vendors-tab .details {
+      align-items: center !important;
+      width: 90% !important;
+    }
+    .vendors-tab .details .text-5xl {
+      font-size: 27px !important;
+      line-height: 30.82px !important;
+    }
+    .vendors-tab .details .font-normal {
+      font-size: 14px !important
+    }
+    .vendors-tab .container {
+      width: 90% !important;
+      height: 319px !important;
+    }
+
+    .mid-info {
+      margin-top: 30% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      background: #1C1C1C;
+      height: 319px !important;
+      border-radius: none !important;
+    }
+    .mid-info .media {
+      display: flex;
+    }
+    .mid-info .media img {
+      display: block;
+      top: 52% !important;
+    }
+    .mid-info img {
+      display: none;
+    }
+
+    .loan-tab {
+      display: none;
+    }
+
+
+    .download-tab {
+      margin-top: 30% !important;
+      text-align: center !important;
+      align-items: center !important;
+      height: 120% !important;
+    }
+    .download-tab .container-bt {
+      position: static !important;
+      width: 95% !important;
+      height: 120% !important;
+    }
+    .download-tab .container {
+      background: none !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-direction: column !important;
+    }
+    .download-tab .container .details {
+      align-items: center !important;
+    }
+    .download-tab .container .details .text-5xl {
+      font-size: 22px;
+      text-align: center;
+      line-height: 26.82px !important;
+    }
+    .download-tab .container .details .font-normal {
+      font-size: 14px !important;
+      line-height: 17px !important;
+      text-align: center;
+    }
+    .download-tab .container .details .download-btn {
+      height: 50px !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+    }
+    .download-tab .container .details .download-btn button {
+      padding: 10px !important;
+    }
+    .download-tab .container .details {
+      text-align: center !important;
+      width: 100% !important;
+    }
+  }

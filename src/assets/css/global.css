@@ -3,6 +3,8 @@
 
 *{
     font-family: "Montserrat";
+    color: #fff;
+    scroll-behavior: smooth;
 }
 
 footer {
