@@ -1,4 +1,3 @@
-const url = 'http://localhost:3030/api/auth/user';
 import {createStore} from 'vuex';
 import axios from 'axios';
 export default createStore({

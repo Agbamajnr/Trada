@@ -16,7 +16,7 @@ export default{
       const getUser = async () => {
         try {
           const cookies = await axios.get('https://trada.vercel.app/api/auth/checkCookies', { withCredentials: true });
-          console.log(cookies.data);
+          console.log(cookies);
           if(cookies.data === true) {
             const res = await axios.get('https://trada.vercel.app/api/auth/user', { withCredentials: true })
 
