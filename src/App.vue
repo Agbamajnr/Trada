@@ -16,6 +16,7 @@ export default{
       const getUser = async () => {
         try {
           const cookies = await axios.get('https://trada-market.herokuapp.com/api/auth/checkCookies', { withCredentials: true });
+          console.log(cookies);
           if(cookies.data === true) {
             const res = await axios.get('https://trada-market.herokuapp.com/api/auth/user', { withCredentials: true })
 
