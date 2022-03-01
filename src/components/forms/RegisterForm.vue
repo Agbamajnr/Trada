@@ -86,7 +86,7 @@ export default {
         
       const router = useRouter();
 
-      const url = 'https://trada-market.netlify.app/';
+      const url = 'https://trada-market.herokuapp.com/';
 
       const submit = async () => {
             submitBtn.value.style.animationDuration = '10s';

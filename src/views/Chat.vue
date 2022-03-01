@@ -80,12 +80,12 @@ export default {
         }
 
         const getUser = async () => {
-            const res = await axios.get('https://trada.vercel.app/api/auth/user', { withCredentials: true })
+            const res = await axios.get('https://trada-market.herokuapp.com/api/auth/user', { withCredentials: true })
             user.value = res.data;
 
             let chatRooms = res.data.chatRooms;
             chatRooms.forEach(async roomId => {
-                const response = await axios.get('https://trada.vercel.app/api/chatting/room/' + roomId)
+                const response = await axios.get('https://trada-market.herokuapp.com/api/chatting/room/' + roomId)
 
                 rooms.value.push({roomDetails: response.data})
             })

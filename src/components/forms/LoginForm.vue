@@ -26,7 +26,7 @@
                 </div>
           </div>
       </div>
-      <div class="form-info flex flex-col items-center justify-center" style="background: #1C1C1C;">
+      <div class="form-info flex flex-col items-center justify-center hidden lg:flex" style="background: #1C1C1C;">
             <div class="flex flex-row justify-between items-center">
                   <img src="../../assets/img/form-details-yelow.svg" alt="">
                   <div class="flex flex-col">
@@ -82,7 +82,7 @@ export default {
         message.value = '';
         processing.value = true;
         submitBtn.value.style.animationDuration = '10s';
-        const response = await axios.post('https://trada-market.netlify.app/api/auth/login', data, {withCredentials: true})
+        const response = await axios.post('https://trada-market.herokuapp.com/api/auth/login', data, {withCredentials: true})
         console.log(response.data);
         if (response.data.message == 'success') {
             setTimeout(() => {      

@@ -75,7 +75,7 @@ export default {
 
         const getMsg = async (room) => {
             room.roomChats.forEach(async chat => {
-                const fetchedMsg = await axios.get('https://trada.vercel.app/vapi/chatting/chat/' + chat);
+                const fetchedMsg = await axios.get('https://trada-market.herokuapp.com/api/chatting/chat/' + chat);
 
                 const data = {
                     username: fetchedMsg.data.username,
@@ -113,7 +113,7 @@ export default {
 
 
             roomInfo.value.roomChats.forEach(async chat => {
-                const fetchedMsg = await axios.get('https://trada.vercel.app/api/chatting/chat/' + chat);
+                const fetchedMsg = await axios.get('https://trada-market.herokuapp.com/api/chatting/chat/' + chat);
 
                 const data = {
                     username: fetchedMsg.data.username,
@@ -131,7 +131,7 @@ export default {
 
 
         const sendMsg = async () => {
-            await fetch('https://trada.vercel.app/api/chatting/message/' + roomInfo.value.id, {
+            await fetch('https://trada-market.herokuapp.com/api/chatting/message/' + roomInfo.value.id, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({

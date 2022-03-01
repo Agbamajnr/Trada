@@ -57,7 +57,7 @@ export default {
         const route = useRoute();
         const store = useStore();
         const logo = ref(null);
-        const url = 'https://trada.vercel.app/';
+        const url = 'https://trada-market.herokuapp.com/';
 
         const submitBtn = ref()
         const processProduct = ref(false)

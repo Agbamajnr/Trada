@@ -15,7 +15,12 @@ export default{
     const store = useStore();
       const getUser = async () => {
         try {
+<<<<<<< HEAD
           const cookies = await axios.get('https://trada-market.herokuapp.com/api/auth/checkCookies', { withCredentials: true });
+=======
+          const cookies = await axios.get('https://trada-market.netlify.app/api/auth/checkCookies', { withCredentials: true });
+          console.log(cookies);
+>>>>>>> 21a5c4c (config cors and proxy)
           if(cookies.data === true) {
             const res = await axios.get('https://trada-market.herokuapp.com/api/auth/user', { withCredentials: true })
 

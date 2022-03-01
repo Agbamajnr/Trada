@@ -53,7 +53,7 @@ export default {
     components : { Logo, PacemanLoader },
     setup() {
 
-        const url = 'https://trada.vercel.app/';
+        const url = 'https://trada-market.herokuapp.com/';
 
         const store = useStore();
         let id = nanoid();
