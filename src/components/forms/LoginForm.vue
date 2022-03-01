@@ -1,7 +1,7 @@
 
 <template>
   <div class="main flex flex-row items-center">
-      <div class="form-container bg-black grid place-items-center">
+      <div class="form-container bg-black grid place-items-center sm:p-5">
           <div class="flex flex-col justify-center">
                 <div class="top flex flex-col items-center justify-between h-36 mb-6">
                 <div class="logo w-4/5 flex flex-row justify-center items-center">
@@ -9,12 +9,12 @@
                 </div>
                 <p class="text-lg font-bold font-normal leading-7">Login to your account</p>
                 </div>
-                <div class="form flex flex-col items-center justify-center">
+                <div class="form flex flex-col items-center justify-center ">
                     <form @submit.prevent="submit">
-                        <input type="email" name="email" placeholder="Email Address" class="w-full" style="width: 389px;" v-model="data.email">
-                        <input type="password" name="pwd" placeholder="Your passcode" class="w-full" style="width: 389px;" v-model="data.password">
+                        <input type="email" name="email" placeholder="Email Address" class="w-full" v-model="data.email">
+                        <input type="password" name="pwd" placeholder="Your passcode" class="w-full" v-model="data.password">
                         <p>{{message}}</p>
-                        <button class="gradient-btn h-12 w-1/2 mt-4 rounded-xl submit-btn cursor-pointer flex items-center justify-center" type="submit" ref="submitBtn">
+                        <button class="gradient-btn h-12 w-4/5 mt-4 rounded-xl submit-btn cursor-pointer flex items-center justify-center" type="submit" ref="submitBtn">
                             <p v-if="processing === false">Login</p>
                             <img src="../../assets/img/rolling.gif" class="w-6 h-6" v-else alt="">
                         </button>
@@ -115,11 +115,11 @@ export default {
         overflow: hidden;
     }
     .form-container {
-        width: 50%;
+        width: 100%;
         height: 100%;
     }
     .form-info {
-        width: 50%;
+        width: 100%;
         height: 100%;
     }
     .form-info div {
