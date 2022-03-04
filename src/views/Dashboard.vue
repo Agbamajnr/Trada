@@ -88,10 +88,10 @@ export default {
         const loading = ref(false);
 
         const getUser = async () => {
-          const cookies = await axios.get('https://trada-market.herokuapp.com/api/auth/checkCookies', { withCredentials: true });
+          const cookies = await axios.get('http://localhost:3030/api/auth/checkCookies', { withCredentials: true });
           console.log(cookies.data);
           if(cookies.data === true) {
-            const res = await axios.get('https://trada-market.herokuapp.com/api/auth/user', { withCredentials: true })
+            const res = await axios.get('http://localhost:3030/api/auth/user', { withCredentials: true })
             user.value = res.data;
             console.log(user);
           } else {
