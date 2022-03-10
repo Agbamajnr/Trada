@@ -129,7 +129,7 @@ export default {
                 headers: {'Content-Type': 'multipart/form-data'},
             });
             processInfo.value = 'Creating Store';
-            const response = await axios.post(url + 'api/newStore', data);
+            const response = await axios.post(url + 'api/store/newStore', data);
 
             makeUserSeller(response.data.storeId);
 
