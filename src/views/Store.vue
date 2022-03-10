@@ -133,7 +133,7 @@ export default {
 
         const router = useRouter();
         const route = useRoute();
-        const url = 'https://trada-market.herokuapp.com/api/store/' + route.params.id;
+        const url = 'https://trada-server.onrender.com/api/store/' + route.params.id;
 
         const getStoreDetails = async () => {
             loading.value = true;
@@ -164,7 +164,7 @@ export default {
 
         async function getProducts() {
             storeDetails.products.forEach(async (product) => {
-                const response = await axios.get('https://trada-market.herokuapp.com/api/product/' + product);
+                const response = await axios.get('https://trada-server.onrender.com/api/product/' + product);
 
                 products.value.push({product: response.data})
                 
@@ -174,7 +174,7 @@ export default {
 
         const startChat = async () => {
             processing.value = true;
-            const data = await axios.post('https://trada-market.herokuapp.com/api/chatting/room', {
+            const data = await axios.post('https://trada-server.onrender.com/api/chatting/room', {
                 "sellerId": storeDetails.id,
                 "buyerId": store.state.user[0]._id,
             })

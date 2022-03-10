@@ -107,7 +107,7 @@ export default {
 
         
 
-        const url = 'https://trada-market.herokuapp.com/api/store';
+        const url = 'https://trada-server.onrender.com/api/store';
         const getAllStores = async () => {
             loading.value = true;
             const response = await axios.get(url);
