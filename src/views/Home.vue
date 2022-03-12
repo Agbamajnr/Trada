@@ -1,7 +1,7 @@
 <template>
   <div class="main flex flex-col justify-between" style="background: #000;">
     <div class="body">
-      <Navbar />
+      <Navbar/>
       
       <div class="intro-text w-full p-5 flex flex-col justify-center items-center">
         <p class="text-6xl text-center">Local Decentralised Markets</p>
@@ -120,8 +120,11 @@
   .main div {
     height: 100%;
   }
+  .main .body .nav {
+    margin-top: 0px !important;
+  }
   .main .body div {
-    margin-top: 26px !important;
+    margin-top: 36px;
   }
 
 
@@ -170,6 +173,9 @@
     .main div {
       margin-top: 1px;
     }
+    .main .body .nav {
+      margin-top: 0px !important;
+    } 
     .main .body div {
       margin-top: 40px !important;
     }

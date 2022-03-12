@@ -2,7 +2,7 @@
   <!--navivigation menu starts-->
       <div class="nav flex flex-col relative" style=" color: #fff;">
           <div class="normal-nav flex flex-row justify-between">
-              <div class="left flex flex-row justify-between items-center p-4 " style="width: 50%;">
+              <div class="left flex flex-row justify-between items-center sm:p-4 " style="width: 50%;">
                 <Logo />
                 <div ref="nav_links" class="links w-1/2 flex justify-between items-center pt-1"  style="font-family: Montserrat;">
                     <a @click="activeLink" href="/comingsoon">Products</a>
@@ -10,7 +10,7 @@
                     <a @click="activeLink" href="/comingsoon">Support</a>
                 </div>
             </div>
-            <div class="right w-44 flex flex-row justify-between items-center pt-2 bg-cyan">
+            <div class="right w-44 flex flex-row justify-between items-center sm:pt-2 bg-cyan">
                 <div class="flex flex-row justify-between items-center w-full" v-if="$store.state.authenticated !== true">
                     <a href="/register">Signup</a>
                     <a href="/login" class="login-btn w-24 h-9 rounded flex justify-center items-center">Login</a>
@@ -182,6 +182,7 @@
         }
         .main .nav .normal-nav {
             height: 120px;
+            
         }
         .main .nav .normal-nav .left .links {
             display: none;
