@@ -207,6 +207,7 @@
 
     .buyers-tab {
       text-align: center !important;
+      margin-top: 100px !important;
       flex-direction: column !important;
     }
     .buyers-tab div {
@@ -231,6 +232,7 @@
 
     .vendors-tab {
       text-align: center !important;
+      margin-bottom: 120px !important;
       flex-direction: column !important;
     }
     .vendors-tab div {
@@ -252,7 +254,7 @@
     }
 
     .mid-info {
-      margin-top: 30% !important;
+      margin-top: 80px !important;
       display: flex !important;
       flex-direction: column !important;
       width: 100% !important;
